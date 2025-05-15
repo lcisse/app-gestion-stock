@@ -4,6 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/config.php'; 
 use App\controllers\ProductsController;
 
 class App
@@ -20,6 +21,22 @@ class App
         switch ($action) {
             case 'dashboard':
                 $this->productsController->showDashboard();
+                break;
+            
+            case 'createProduct':
+                $this->productsController->createProduct();
+            break;
+
+            case 'deleteProduct':
+                $this->productsController->deleteProduct();
+                break;
+
+            case 'editProduct':
+                $this->productsController->editProduct();
+                break;
+                
+            case 'updateProduct':
+                $this->productsController->updateProduct();
                 break;
 
             default:
